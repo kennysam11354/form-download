@@ -27,6 +27,18 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-x: auto;
+  /* Enable horizontal scroll for mobile */
+  min-height: 100vh;
+}
+
+#app {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px 100px 20px;
+  /* Space for scroll and action bar */
 }
 
 /* Page Container - This represents the physical paper */
