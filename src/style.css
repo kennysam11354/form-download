@@ -1,0 +1,249 @@
+:root {
+  --primary-color: #2E548A;
+  --secondary-color: #595959;
+  --background-color: #e0e4e8;
+  --white: #ffffff;
+  --border-color: #d1d8df;
+  --text-main: #333333;
+  --text-muted: #666666;
+
+  /* Letter Size dimensions at 96 DPI */
+  --letter-width: 8.5in;
+  --letter-height: 11in;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-main);
+  line-height: 1.4;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Page Container - This represents the physical paper */
+.page {
+  width: var(--letter-width);
+  height: var(--letter-height);
+  padding: 0.5in;
+  background: var(--white);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Page Header/Footer helper */
+.page-number {
+  position: absolute;
+  bottom: 0.3in;
+  right: 0.5in;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Letterhead Section */
+.letterhead {
+  padding-bottom: 0.3in;
+  border-bottom: 2px solid var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.3in;
+}
+
+.brand-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-placeholder {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.company-details h1 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin-bottom: 0;
+}
+
+.slogan {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+  text-transform: uppercase;
+}
+
+.contact-info {
+  text-align: right;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+/* Form Styles */
+h2.form-title {
+  text-align: center;
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  margin-bottom: 0.3in;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.form-section {
+  margin-bottom: 0.25in;
+}
+
+.form-section h3 {
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  margin-bottom: 0.15in;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 5px;
+}
+
+.form-group {
+  margin-bottom: 0.15in;
+}
+
+.question-label {
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.08in;
+  font-size: 0.9rem;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.4rem;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.4rem;
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  font-size: 0.85rem;
+}
+
+.inline-input {
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  padding: 2px 5px;
+  font-size: 0.85rem;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.1in;
+  font-size: 0.85rem;
+}
+
+.data-table th,
+.data-table td {
+  border: 1px solid var(--border-color);
+  padding: 8px;
+}
+
+.data-table th {
+  background-color: #f0f4f8;
+  color: var(--primary-color);
+}
+
+/* Action Bar (Sticky UI) */
+.action-bar {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 15px 30px;
+  border-radius: 50px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  display: flex;
+  gap: 15px;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+  border: 1px solid var(--border-color);
+}
+
+.btn {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 25px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #1a3a63;
+  transform: scale(1.05);
+}
+
+/* Loading Overlay */
+.download-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  color: white;
+  font-weight: bold;
+}
+
+/* Printing logic */
+@media print {
+  body {
+    background: white;
+    padding: 0;
+  }
+
+  .action-bar {
+    display: none;
+  }
+
+  .page {
+    box-shadow: none;
+    margin: 0;
+    page-break-after: always;
+  }
+}

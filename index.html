@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multizer | Network Intake Form</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="app">
+    <!-- PAGE 1 -->
+    <div class="page" id="page-1">
+      <header class="letterhead">
+        <div class="brand-info">
+          <img src="/logo.png" alt="Multizer Logo" class="logo-placeholder" onerror="this.style.display='none'">
+          <div class="company-details">
+            <h1>MULTIZER</h1>
+            <p class="slogan">MULTI TECH GOES MULTI TASK</p>
+          </div>
+        </div>
+        <div class="contact-info">
+          <p><strong>PH:</strong> 201-500-5317</p>
+          <p><strong>WEB:</strong> MULTIZER.COM</p>
+          <p><strong>EMAIL:</strong> KENNY@MULTIZER.COM</p>
+        </div>
+      </header>
+
+      <main>
+        <h2 class="form-title">Network Infrastructure Pre‑Installation Form</h2>
+
+        <section class="form-section">
+          <h3>1. Property General Information</h3>
+          <div class="form-group">
+            <label class="question-label">1. Total number of rooms</label>
+            <div class="options-grid">
+              <label class="checkbox-item"><input type="checkbox"> Approx. <input type="text" class="inline-input"
+                  style="width:60px"> rooms</label>
+              <label class="checkbox-item"><input type="checkbox"> Includes suites</label>
+              <label class="checkbox-item"><input type="checkbox"> Includes meeting rooms</label>
+              <label class="checkbox-item"><input type="checkbox"> Includes lobby</label>
+              <label class="checkbox-item"><input type="checkbox"> Includes restaurant</label>
+              <label class="checkbox-item"><input type="checkbox"> Other: <input type="text" class="inline-input"
+                  style="width:120px"></label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="question-label">2. Total number of floors</label>
+            <div style="display: flex; gap: 1.5rem;">
+              <div>Above ground: <input type="text" class="inline-input" style="width:40px"></div>
+              <div>Basement: <input type="text" class="inline-input" style="width:40px"></div>
+              <label class="checkbox-item"><input type="checkbox"> No basement</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="question-label">3. Room layout & Structure</label>
+            <div class="options-grid">
+              <label class="checkbox-item"><input type="checkbox"> Single corridor</label>
+              <label class="checkbox-item"><input type="checkbox"> Central corridor</label>
+              <label class="checkbox-item"><input type="checkbox"> Tower type</label>
+              <label class="checkbox-item"><input type="checkbox"> Mixed</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="question-label">4. Wall & Ceiling structure</label>
+            <div class="options-grid">
+              <label class="checkbox-item"><input type="checkbox"> Concrete Wall</label>
+              <label class="checkbox-item"><input type="checkbox"> Drywall</label>
+              <label class="checkbox-item"><input type="checkbox"> Drop Ceiling</label>
+              <label class="checkbox-item"><input type="checkbox"> Open Ceiling</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="question-label">5. Metal duct / piping density (Optional)</label>
+            <div class="options-grid">
+              <label class="checkbox-item"><input type="checkbox"> Heavy</label>
+              <label class="checkbox-item"><input type="checkbox"> Moderate</label>
+              <label class="checkbox-item"><input type="checkbox"> Minimal</label>
+            </div>
+          </div>
+        </section>
+
+        <section class="form-section">
+          <h3>2. Current WiFi Environment</h3>
+          <div class="form-group">
+            <label class="question-label">1. Existing WiFi installed?</label>
+            <div class="options-grid">
+              <label class="checkbox-item"><input type="checkbox"> Yes</label>
+              <label class="checkbox-item"><input type="checkbox"> No</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="question-label">2. Current AP installation location</label>
+            <div class="options-grid">
+              <label class="checkbox-item"><input type="checkbox"> Above ceiling</label>
+              <label class="checkbox-item"><input type="checkbox"> Wall mounted</label>
+              <label class="checkbox-item"><input type="checkbox"> Ceiling mounted</label>
+              <label class="checkbox-item"><input type="checkbox"> Mixed</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="question-label">3. Total number of APs & Brand/Model</label>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+              <div>Qty: <input type="text" class="inline-input" style="width:50px"></div>
+              <div>Brand: <input type="text" class="inline-input" style="width:120px"></div>
+              <div>Model: <input type="text" class="inline-input" style="width:120px"></div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <div class="page-number">Page 1 of 2</div>
+    </div>
+
+    <!-- PAGE 2 -->
+    <div class="page" id="page-2">
+      <header class="letterhead">
+        <div class="brand-info">
+          <img src="/logo.png" alt="Multizer Logo" class="logo-placeholder" onerror="this.style.display='none'">
+          <div class="company-details">
+            <h1>MULTIZER</h1>
+          </div>
+        </div>
+        <div class="contact-info">
+          <p>Network Pre-Installation Intake Form (Cont.)</p>
+        </div>
+      </header>
+
+      <main>
+        <section class="form-section">
+          <h3>3. Internet Service (ISP)</h3>
+          <div class="form-group">
+            <label class="question-label">1. ISP Provider & Details</label>
+            <input type="text" class="input-field" placeholder="ISP Provider Name">
+            <div class="options-grid" style="margin-top:0.5rem">
+              <label class="checkbox-item"><input type="checkbox"> Single ISP</label>
+              <label class="checkbox-item"><input type="checkbox"> Multiple</label>
+              <label class="checkbox-item"><input type="checkbox"> Dedicated (Static)</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="question-label">2. Bandwidth</label>
+            <div style="display: flex; gap: 1rem;">
+              <div>Down: <input type="text" class="inline-input" style="width:80px"></div>
+              <div>Up: <input type="text" class="inline-input" style="width:80px"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="form-section">
+          <h3>4 & 5. Core Network & Rack Info</h3>
+          <div class="form-group">
+            <label class="question-label">1. Router & Switch</label>
+            <div style="display: flex; flex-direction: column; gap: 5px;">
+              <div>Router Model: <input type="text" class="inline-input" style="width:250px"></div>
+              <div>L3 Switch Model: <input type="text" class="inline-input" style="width:250px"></div>
+            </div>
+          </div>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Rack Type</th>
+                <th>Location / Qty</th>
+                <th>Condition</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>MDF</td>
+                <td><input type="text" class="inline-input" style="width:180px"></td>
+                <td><input type="text" class="inline-input" style="width:100px"></td>
+              </tr>
+              <tr>
+                <td>IDF</td>
+                <td><input type="text" class="inline-input" style="width:180px"></td>
+                <td><input type="text" class="inline-input" style="width:100px"></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="form-section">
+          <h3>6 & 7. Functional Requirements & VLANs</h3>
+          <div class="options-grid">
+            <label class="checkbox-item"><input type="checkbox"> Captive Portal</label>
+            <label class="checkbox-item"><input type="checkbox"> PMS Integration</label>
+            <label class="checkbox-item"><input type="checkbox"> Guest Network</label>
+            <label class="checkbox-item"><input type="checkbox"> Staff Network</label>
+            <label class="checkbox-item"><input type="checkbox"> CCTV VLAN</label>
+            <label class="checkbox-item"><input type="checkbox"> POS / Payment</label>
+            <label class="checkbox-item"><input type="checkbox"> IPTV VLAN</label>
+            <label class="checkbox-item"><input type="checkbox"> Casting Isolation</label>
+          </div>
+        </section>
+
+        <section class="form-section">
+          <h3>8 & 9. Additional Docs & Notes</h3>
+          <div class="options-grid" style="margin-bottom: 0.2in;">
+            <label class="checkbox-item"><input type="checkbox"> Floor plans</label>
+            <label class="checkbox-item"><input type="checkbox"> Rack Photos</label>
+            <label class="checkbox-item"><input type="checkbox"> Diagram</label>
+          </div>
+          <label class="question-label">Special Requirements / Notes:</label>
+          <textarea class="input-field" rows="5"></textarea>
+        </section>
+      </main>
+      <div class="page-number">Page 2 of 2</div>
+    </div>
+
+    <div class="action-bar">
+      <button id="download-btn" class="btn btn-primary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+          <polyline points="7 10 12 15 17 10" />
+          <line x1="12" y1="15" x2="12" y2="3" />
+        </svg>
+        Save as PDF (Letter)
+      </button>
+    </div>
+  </div>
+  <div id="loading" class="download-overlay">Generating Professional PDF...</div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
