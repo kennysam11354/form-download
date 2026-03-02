@@ -8,6 +8,7 @@ export default defineConfig({
                 main: resolve(__dirname, 'index.html'),
                 standard: resolve(__dirname, 'standard-form.html'),
                 ramada: resolve(__dirname, 'ramada-form.html'),
+                pest: resolve(__dirname, 'pest-control-erp-uml.html'),
             },
         },
     },
