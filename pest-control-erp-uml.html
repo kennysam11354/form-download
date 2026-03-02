@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multizer | Pest Control ERP Architecture UML</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css">
+    <!-- Include Mermaid.js -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true, theme: 'default' });
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <div style="width: var(--letter-width); margin: 0 auto 20px auto; padding: 0 10px;">
+            <a href="index.html" class="tab-btn"
+                style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px; width: auto; padding: 10px 20px;">
+                <span>←</span> Back to Directory
+            </a>
+        </div>
+
+        <div id="standard-version" class="version-container active">
+            <!-- PAGE 1: Architecture & State Machine -->
+            <div class="page" id="page-1">
+                <header class="letterhead">
+                    <div class="brand-info">
+                        <img src="/logo.png" alt="Multizer Logo" class="logo-placeholder"
+                            onerror="this.style.display='none'">
+                        <div class="company-details">
+                            <h1>MULTIZER</h1>
+                            <p class="slogan">MULTI TECH GOES MULTI TASK</p>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <p><strong>PH:</strong> 201-500-5317</p>
+                        <p><strong>WEB:</strong> MULTIZER.COM</p>
+                        <p><strong>EMAIL:</strong> KENNY@MULTIZER.COM</p>
+                    </div>
+                </header>
+
+                <main>
+                    <h2 class="form-title">Pest Control ERP (v7) Architecture & State Machines</h2>
+
+                    <section class="form-section">
+                        <h3>1. Overall System Architecture</h3>
+                        <p class="question-label" style="margin-bottom: 20px; font-weight: normal;">
+                            The ERP consists of multiple layers enforcing strict role-based and schema-driven execution.
+                        </p>
+                        <div class="mermaid">
+                            flowchart TD
+                            User[User Web UI / AI Chat] --> Backend
+                            Mobile[Mobile App / Field Technicians] --> Backend
+
+                            subgraph Backend Server
+                            LLM[LLM Layer Translator]
+                            Validation[Validation Layer Schema & Permissions]
+                            CLI[CLI Layer Execute Commands]
+                            Engine[Core Business Engine Deterministic Accounting]
+
+                            User -- Actions --> LLM
+                            Mobile -- GPS / Photos / Signatures --> Validation
+
+                            LLM -- JSON Command --> Validation
+                            Validation -- Validated Command --> CLI
+                            CLI -- Command Execution --> Engine
+                            end
+
+                            DB[(PostgreSQL Database)]
+                            S3[(Object Storage S3/Photos)]
+
+                            Engine -- Persist Changes --> DB
+                            Engine -- Save Photos/Sigs --> S3
+                        </div>
+                    </section>
+
+                    <section class="form-section">
+                        <h3>2. Ticket State Machine</h3>
+                        <p class="question-label" style="margin-bottom: 20px; font-weight: normal;">
+                            Tickets represent service work. They lock upon customer submission.
+                        </p>
+                        <div class="mermaid">
+                            stateDiagram-v2
+                            [*] --> DRAFT : Field Tech Creates Ticket
+                            DRAFT --> SUBMITTED : Customer Signs & Submits
+                            SUBMITTED --> INVOICED : Attached to Invoice
+                            SUBMITTED --> EXCLUDED : Excluded from Invoice
+
+                            SUBMITTED --> VOID_PENDING : Void Requested
+                            VOID_PENDING --> VOIDED : Void Approved
+
+                            INVOICED --> [*]
+                            EXCLUDED --> [*]
+                            VOIDED --> [*]
+                        </div>
+                    </section>
+                </main>
+                <div class="page-number">Page 1 of 2</div>
+            </div>
+
+            <!-- PAGE 2: ERD -->
+            <div class="page" id="page-2">
+                <header class="letterhead">
+                    <div class="brand-info">
+                        <img src="/logo.png" alt="Multizer Logo" class="logo-placeholder"
+                            onerror="this.style.display='none'">
+                        <div class="company-details">
+                            <h1>MULTIZER</h1>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <p>Pest Control ERP Entity-Relationship Diagram (Cont.)</p>
+                    </div>
+                </header>
+
+                <main>
+                    <section class="form-section">
+                        <h3>3. Core Accounting Entity-Relationship Diagram (ERD)</h3>
+                        <p class="question-label" style="margin-bottom: 20px; font-weight: normal;">
+                            Displaying the core relationships of the transactional ledger, invoices, tickets, and
+                            clients.
+                        </p>
+                        <div class="mermaid" style="font-size: 0.8em;">
+                            erDiagram
+                            COMPANIES ||--o{ ACCOUNTS : "has many"
+                            COMPANIES ||--o{ USERS : "employs"
+                            ACCOUNTS ||--o{ LOCATIONS : "owns"
+                            ACCOUNTS ||--o{ INVOICES : "billed to"
+                            ACCOUNTS ||--o{ PAYMENTS : "makes"
+
+                            USERS ||--o{ TECHNICIANS : "is a"
+
+                            LOCATIONS ||--o{ TICKETS : "hosts service"
+                            TECHNICIANS ||--o{ TICKETS : "performs"
+
+                            TICKETS ||--o{ INVOICE_TICKET_LINK : "logs included"
+                            INVOICES ||--o{ INVOICE_TICKET_LINK : "contains"
+
+                            INVOICES ||--o{ ALLOCATIONS : "receives payment via"
+                            PAYMENTS ||--o{ ALLOCATIONS : "applied via"
+
+                            ACCOUNTS ||--o{ AR_LEDGER : "has balance entries"
+                            INVOICES ||--|{ AR_LEDGER : "creates INVOICE_ISSUE events"
+                            PAYMENTS ||--|{ AR_LEDGER : "creates PAYMENT_POST events"
+
+                            COMPANIES {
+                            UUID id PK
+                            TEXT name
+                            }
+                            ACCOUNTS {
+                            UUID id PK
+                            UUID company_id FK
+                            TEXT name
+                            TEXT payment_term_days
+                            }
+                            LOCATIONS {
+                            UUID id PK
+                            UUID account_id FK
+                            TEXT address
+                            }
+                            TICKETS {
+                            UUID id PK
+                            UUID location_id FK
+                            UUID technician_id FK
+                            TEXT status
+                            NUMERIC amount
+                            }
+                            INVOICES {
+                            UUID id PK
+                            UUID account_id FK
+                            TEXT status
+                            NUMERIC total_amount
+                            }
+                            PAYMENTS {
+                            UUID id PK
+                            UUID account_id FK
+                            TEXT status
+                            NUMERIC amount
+                            }
+                            ALLOCATIONS {
+                            UUID id PK
+                            UUID payment_id FK
+                            UUID invoice_id FK
+                            NUMERIC amount_applied
+                            TEXT status
+                            }
+                            AR_LEDGER {
+                            UUID id PK
+                            UUID account_id FK
+                            TEXT event_type
+                            TEXT source_type
+                            NUMERIC debit_amount
+                            NUMERIC credit_amount
+                            }
+                        </div>
+                    </section>
+                </main>
+                <div class="page-number">Page 2 of 2</div>
+            </div>
+        </div>
+
+        <div class="action-bar no-print">
+            <button id="download-btn" class="btn btn-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                Save as PDF (Letter)
+            </button>
+        </div>
+    </div>
+    <div id="loading" class="download-overlay">Generating Professional PDF...</div>
+    <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
