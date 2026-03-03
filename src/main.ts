@@ -62,7 +62,34 @@ if (downloadBtn) {
           logging: false,
           backgroundColor: '#ffffff',
           width: page.offsetWidth,
-          height: page.offsetHeight
+          height: page.offsetHeight,
+          onclone: (clonedDoc) => {
+            const clonedPage = clonedDoc.getElementById(page.id);
+            if (!clonedPage) return;
+
+            // Sync input values - Using tagName instead of instanceof for robustness in cloned documents
+            const inputs = clonedPage.querySelectorAll('input, textarea, select');
+            inputs.forEach(el => {
+              const element = el as any;
+              const tagName = element.tagName.toLowerCase();
+
+              if (tagName === 'input') {
+                if (element.type === 'checkbox' || element.type === 'radio') {
+                  if (element.checked) element.setAttribute('checked', '');
+                  else element.removeAttribute('checked');
+                } else {
+                  element.setAttribute('value', element.value);
+                }
+              } else if (tagName === 'textarea') {
+                element.innerHTML = element.value;
+              } else if (tagName === 'select') {
+                const selectedOption = element.options[element.selectedIndex];
+                if (selectedOption) {
+                  selectedOption.setAttribute('selected', 'selected');
+                }
+              }
+            });
+          }
         })
 
         const imgData = canvas.toDataURL('image/jpeg', 0.8)

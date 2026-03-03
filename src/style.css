@@ -158,17 +158,23 @@ h2.form-title {
 
 .input-field {
   width: 100%;
-  padding: 0.4rem;
+  padding: 0.6rem;
   border: 1px solid var(--border-color);
-  border-radius: 3px;
-  font-size: 0.85rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-main);
+  background-color: #fafbfc;
 }
 
 .inline-input {
   border: none;
-  border-bottom: 1px solid var(--border-color);
-  padding: 2px 5px;
-  font-size: 0.85rem;
+  border-bottom: 2px solid var(--border-color);
+  padding: 2px 8px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  background: transparent;
+  transition: border-bottom-color 0.2s;
 }
 
 .data-table {
