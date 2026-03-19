@@ -255,8 +255,7 @@
 
                     <div class="info-box">
                         <p><strong>1. 이 시스템이 무엇인가?</strong><br>
-                        고객 관리, 현장 서비스, 인보이스, 회계(미수금 관리)를 하나로 통합한 전문 ERP입니다. 
-                        현장 기록이 즉시 인보이스로 연결되고, 입금이 누락 없이 반영되는 완벽한 업무 흐름을 제공합니다.</p>
+                        고객 관리, 현장 서비스, 인보이스를 하나로 통합한 전문 ERP입니다. 특히 **서브 컨트랙터(Sub-contractor) 중심 구조**로 설계되어, 관리자 대시보드에서 각 서브 컨트랙터별 독립적인 비즈니스 현황을 한눈에 파악할 수 있는 체계적인 시스템을 제공합니다.</p>
                     </div>
 
                     <div class="grid-2">
@@ -264,15 +263,15 @@
                         <div class="section-card">
                             <h3>🔥 2. 전체 흐름 (Workflow)</h3>
                             <div class="flow-container">
-                                <div class="flow-step">스케줄 생성</div>
+                                <div class="flow-step">서브 컨트랙터별 고객(Account) 관리</div>
                                 <div class="flow-arrow">↓</div>
-                                <div class="flow-step">현장 서비스 (Technician)</div>
+                                <div class="flow-step">스케줄 및 현장 서비스 수행</div>
                                 <div class="flow-arrow">↓</div>
                                 <div class="flow-step">티켓 작성 + 고객 서명</div>
                                 <div class="flow-arrow">↓</div>
-                                <div class="flow-step">Invoice 발행</div>
+                                <div class="flow-step">Invoice 발행 및 요금 회수</div>
                                 <div class="flow-arrow">↓</div>
-                                <div class="flow-step">미수금(AR) 자동 반영</div>
+                                <div class="flow-step">Statement 자동 산출 및 발송</div>
                             </div>
                         </div>
 
@@ -280,19 +279,19 @@
                         <div class="section-card">
                             <h3>👤 3. 사용자 역할</h3>
                             <div style="margin-bottom: 25px;">
-                                <span class="role-badge badge-owner">🟦 Owner (관리자)</span>
+                                <span class="role-badge badge-owner">🟦 Owner / Admin (관리자)</span>
                                 <ul class="feature-list">
-                                    <li>전체 고객(Account) 및 미수금 관리</li>
-                                    <li>인보이스 생성, 발송 및 입금 처리</li>
-                                    <li>기사(Technician) 스케줄 및 정산</li>
+                                    <li>전체 비즈니스 통합 관리 및 대시보드 모니터링</li>
+                                    <li>서브 컨트랙터별 실적 정산 및 분석</li>
+                                    <li>전체 회계(Accounting) 원장 및 재무 데이터 관리</li>
                                 </ul>
                             </div>
                             <div style="margin-bottom: 5px;">
-                                <span class="role-badge badge-tech">🟩 Technician (현장 기사)</span>
+                                <span class="role-badge badge-tech">🟩 Technician / Sub-contractor</span>
                                 <ul class="feature-list">
-                                    <li>담당 고객 조회 및 스케줄 생성</li>
-                                    <li>현장 서비스 수행 및 디지털 티켓 작성</li>
-                                    <li>현장 사진 업로드 및 고객 서명 수령</li>
+                                    <li><strong>독립적 계좌 관리:</strong> 본인의 고객 구좌(Account) 직접 관리</li>
+                                    <li><strong>현장 전문성:</strong> 작업 기록, 사진 업로드 및 고객 서명 수령</li>
+                                    <li><strong>제한적 권한:</strong> 스케줄링, 요금 회수, 인보이스 생성/보이드는 가능하나 전체 회계 데이터 접근은 차단됨</li>
                                 </ul>
                             </div>
                         </div>
@@ -332,8 +331,8 @@
                         <div class="section-card">
                             <p style="font-weight: 700; font-size: 14px; color: var(--secondary-blue); margin-bottom: 8px;">📊 4.3 AR & Statement</p>
                             <ul class="feature-list">
-                                <li><strong>미수금 관리:</strong> 연체 여부 실시간 계산</li>
-                                <li><strong>Customer Statement:</strong> 전체 내역 요약 전송</li>
+                                <li><strong>미수금 관리:</strong> 각 테크니션(서브 컨트랙터)이 보유한 고객별 연체 상황 실시간 계산</li>
+                                <li><strong>Auto Statement:</strong> 발행된 티켓 기반으로 스테이트먼트가 자동 생성되며, 지정된 일자에 자동으로 발송됩니다.</li>
                             </ul>
                         </div>
 
