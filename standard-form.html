@@ -245,7 +245,12 @@
             </div>
         </div>
 
-        <div class="action-bar no-print">
+        <div class="action-bar no-print" style="margin-top: 20px; flex-direction: column; gap: 10px;">
+            <div style="display: flex; gap: 10px; width: 100%;">
+                <button onclick="document.getElementById('page-1').scrollIntoView({behavior: 'smooth'})" class="btn" style="flex:1; background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1;">P1</button>
+                <button onclick="document.getElementById('page-2').scrollIntoView({behavior: 'smooth'})" class="btn" style="flex:1; background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1;">P2</button>
+                <button onclick="document.getElementById('page-3').scrollIntoView({behavior: 'smooth'})" class="btn" style="flex:1; background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1;">P3</button>
+            </div>
             <button id="download-btn" class="btn btn-primary">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
