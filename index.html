@@ -127,6 +127,32 @@
       background: #e6fffa;
       color: #2c7a7b;
     }
+
+    .sub-item {
+      display: flex;
+      align-items: center;
+      padding: 10px 12px;
+      margin-bottom: 8px;
+      background: #f8fafc;
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .sub-item:hover {
+      background: var(--light-blue);
+      color: var(--primary-blue);
+      border-color: var(--secondary-blue);
+      transform: translateX(5px);
+    }
+
+    .sub-item:last-child {
+      margin-bottom: 0;
+    }
   </style>
 </head>
 
@@ -160,16 +186,20 @@
         </div>
       </a>
 
-      <!-- Pest Control ERP UML Form -->
-      <a href="pest-control-erp-uml.html" class="form-card">
-        <div class="form-card-icon">📊</div>
-        <div class="form-card-badge" style="background: #e6f0fa; color: #1e3a8a;">Architecture</div>
-        <h3>Pest Control ERP UML</h3>
-        <p>System architecture flowchart, ERD, and state machine diagrams for pest control.</p>
-        <div style="color: #1e3a8a; font-weight: 700; display: flex; align-items: center; gap: 5px;">
-          View Diagrams <span>→</span>
+      <!-- NEW: Pest Control ERP Category Card -->
+      <div class="form-card" style="grid-column: span 1; cursor: default; background: white; border: 2px solid var(--primary-color);">
+        <div class="form-card-icon" style="background: var(--light-blue);">🐜</div>
+        <div class="form-card-badge" style="background: var(--primary-blue); color: white;">Project Category</div>
+        <h3>Pest Control ERP Project</h3>
+        <p>Managed suite of documents and UML diagrams for the Pest Control ERP v7 system.</p>
+        
+        <div class="sub-menu" style="margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px;">
+          <a href="pest-control-erp-uml.html" class="sub-item">📊 Pest Control ERP UML</a>
+          <a href="pest-control-erp-user-intro.html" class="sub-item">📘 ERP User Intro</a>
+          <a href="pest-control-erp-arch-intro.html" class="sub-item">🚀 ERP Arch Intro</a>
+          <a href="pest-control-erp-operation-manual.html" class="sub-item">📖 Operation Manual</a>
         </div>
-      </a>
+      </div>
 
       <!-- Placeholder for more forms in the future -->
       <div class="form-card" style="opacity: 0.6; cursor: default;">

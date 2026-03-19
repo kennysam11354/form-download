@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multizer | Pest Control ERP User Manual</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css">
+    <style>
+        :root {
+            --primary-blue: #1e3a8a;
+            --secondary-blue: #3b82f6;
+            --light-blue: #eff6ff;
+            --text-dark: #1f2937;
+            --text-muted: #6b7280;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+            background-color: #f3f4f6;
+        }
+
+        .intro-page {
+            background: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-stripe {
+            height: 8px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue));
+            width: 100%;
+        }
+
+        .title-section {
+            padding: 40px 0 20px 0;
+            border-bottom: 2px solid var(--light-blue);
+            margin-bottom: 30px;
+        }
+
+        .main-title {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin: 0;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-muted);
+            margin-top: 8px;
+        }
+
+        .section-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            height: auto;
+        }
+
+        .section-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-top: 0;
+            margin-bottom: 12px;
+            border-bottom: 2px solid var(--light-blue);
+            padding-bottom: 8px;
+        }
+
+        .step-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .step-list li {
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 15px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .step-list li::before {
+            content: attr(data-step);
+            position: absolute;
+            left: 0;
+            background: var(--secondary-blue);
+            color: white;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .note-box {
+            background: #fffbeb;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 10px;
+            font-size: 13px;
+            border: 1px solid #fde68a;
+            color: #92400e;
+        }
+
+        .footer-info {
+            margin-top: 40px;
+            text-align: center;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .page-number {
+            position: absolute;
+            bottom: 0.5in;
+            right: 0.5in;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div style="width: var(--letter-width); margin: 0 auto 20px auto; padding: 0 10px;">
+            <a href="index.html" class="tab-btn"
+                style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px; width: auto; padding: 10px 20px;">
+                <span>←</span> Back to Directory
+            </a>
+        </div>
+
+        <div id="manual-version" class="version-container active">
+            <!-- PAGE 1 -->
+            <div class="page intro-page" id="page-1">
+                <div class="header-stripe"></div>
+                <header class="letterhead" style="margin-bottom: 0;">
+                    <div class="brand-info">
+                        <img src="/logo.png" alt="Multizer Logo" class="logo-placeholder"
+                            onerror="this.style.display='none'">
+                        <div class="company-details">
+                            <h1 style="color: var(--primary-blue); margin: 0;">MULTIZER</h1>
+                            <p class="slogan" style="color: var(--secondary-blue); font-weight: 700;">USER OPERATION MANUAL</p>
+                        </div>
+                    </div>
+                </header>
+
+                <main style="padding: 0 0.5in;">
+                    <section class="title-section">
+                        <h2 class="main-title">Pest Control ERP v7 사용자 매뉴얼</h2>
+                        <p class="subtitle">인보이스 발행부터 미수금 관리까지 - 상세 운영 가이드</p>
+                    </section>
+
+                    <div class="section-card">
+                        <h3>1. 인보이스 작성 및 발행</h3>
+                        <ul class="step-list">
+                            <li data-step="1"><strong>대상 선택:</strong> `Invoices` 메뉴에서 `Create New Invoice` 클릭</li>
+                            <li data-step="2"><strong>고객사 지정:</strong> 시스템이 해당 고객의 '미납 티켓' 목록 자동 검색</li>
+                            <li data-step="3"><strong>티켓 검토:</strong> 인보이스에 포함할 작업을 체크하고 불필요한 건 제외</li>
+                            <li data-step="4"><strong>발행:</strong> `Issue Invoice` 버튼 클릭</li>
+                        </ul>
+                        <div class="note-box">
+                            <strong>⚠️ 주의:</strong> 발행된 인보이스는 수정이 불가능하며, 수정 시 Void(무효화) 후 재발행해야 합니다.
+                        </div>
+                    </div>
+
+                    <div class="section-card">
+                        <h3>2. 현장 사진 및 관리</h3>
+                        <ul class="step-list">
+                            <li data-step="1"><strong>현장 촬영:</strong> 기사가 앱에서 작업 전/후 사진을 직접 촬영</li>
+                            <li data-step="2"><strong>티켓 첨부:</strong> 모든 사진은 해당 서비스 티켓에 클라우드 방식으로 영구 보존</li>
+                            <li data-step="3"><strong>청구서 포함:</strong> `Include Service Photos` 옵션 선택 시 인보이스에 증빙 자료로 자동 삽입</li>
+                        </ul>
+                    </div>
+
+                    <div class="section-card">
+                        <h3>3. 미수금(AR) 조회 및 관리</h3>
+                        <ul class="step-list">
+                            <li data-step="1"><strong>현황 파악:</strong> 대시보드의 'AR Aging Summary'에서 실시간 미납액 확인</li>
+                            <li data-step="2"><strong>입금 등록:</strong> 대금을 수령하면 `Post Payment`를 통해 원장 반영</li>
+                            <li data-step="3"><strong>금액 배정:</strong> 입금액을 특정 인보이스에 매칭하여 '완납(PAID)' 상태 관리</li>
+                        </ul>
+                    </div>
+                </main>
+                <div class="page-number">Page 1 of 1</div>
+            </div>
+        </div>
+
+        <div class="action-bar no-print">
+            <button id="download-btn" class="btn btn-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                Save User Manual as PDF
+            </button>
+        </div>
+    </div>
+    <div id="loading" class="download-overlay">Generating Professional Document...</div>
+    <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multizer | Pest Control ERP User Intro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css">
+    <style>
+        :root {
+            --primary-blue: #1e3a8a;
+            --secondary-blue: #3b82f6;
+            --light-blue: #eff6ff;
+            --accent-green: #10b981;
+            --text-dark: #1f2937;
+            --text-muted: #6b7280;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+            background-color: #f3f4f6;
+        }
+
+        .intro-page {
+            background: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-stripe {
+            height: 8px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue));
+            width: 100%;
+        }
+
+        .title-section {
+            padding: 40px 0 20px 0;
+            border-bottom: 2px solid var(--light-blue);
+            margin-bottom: 30px;
+        }
+
+        .main-title {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: var(--text-muted);
+            margin-top: 8px;
+        }
+
+        .info-box {
+            background: var(--light-blue);
+            border-left: 4px solid var(--secondary-blue);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+        }
+
+        .info-box p {
+            margin: 0;
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .section-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 20px;
+            height: 100%;
+        }
+
+        .section-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-top: 0;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .flow-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 0;
+        }
+
+        .flow-step {
+            background: white;
+            border: 2px solid var(--secondary-blue);
+            color: var(--secondary-blue);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            width: 80%;
+            text-align: center;
+            position: relative;
+        }
+
+        .flow-arrow {
+            color: var(--secondary-blue);
+            font-size: 18px;
+        }
+
+        .role-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .badge-owner { background: #dbeafe; color: #1e40af; }
+        .badge-tech { background: #dcfce7; color: #166534; }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 8px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .feature-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-blue);
+            font-weight: bold;
+        }
+
+        .principles-box {
+            background: #fffbeb;
+            border: 1px dashed #f59e0b;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .principles-box h4 {
+            color: #92400e;
+            margin: 0 0 10px 0;
+            font-size: 16px;
+        }
+
+        .ai-badge {
+            background: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-left: 8px;
+        }
+
+        .footer-benefits {
+            background: var(--primary-blue);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+
+        .footer-benefits h3 {
+            margin-top: 0;
+            font-size: 18px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding-bottom: 10px;
+        }
+
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .benefit-item {
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .page-number-custom {
+            position: absolute;
+            bottom: 0.5in;
+            right: 0.5in;
+            color: var(--text-muted);
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div style="width: var(--letter-width); margin: 0 auto 20px auto; padding: 0 10px;">
+            <a href="index.html" class="tab-btn"
+                style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px; width: auto; padding: 10px 20px;">
+                <span>←</span> Back to Directory
+            </a>
+        </div>
+
+        <div id="intro-version" class="version-container active">
+            <!-- PAGE 1 -->
+            <div class="page intro-page" id="page-1">
+                <div class="header-stripe"></div>
+                <header class="letterhead" style="margin-bottom: 0;">
+                    <div class="brand-info">
+                        <img src="/logo.png" alt="Multizer Logo" class="logo-placeholder"
+                            onerror="this.style.display='none'">
+                        <div class="company-details">
+                            <h1 style="color: var(--primary-blue); margin: 0;">MULTIZER</h1>
+                            <p class="slogan" style="color: var(--secondary-blue); font-weight: 700;">NEXT-GEN ERP SOLUTION</p>
+                        </div>
+                    </div>
+                </header>
+
+                <main style="padding: 0 0.5in;">
+                    <section class="title-section">
+                        <h2 class="main-title">📘 Pest Control ERP 사용자 소개 문서 <span style="font-size: 14px; font-weight: normal; color: var(--text-muted); margin-left: auto;">v1.0</span></h2>
+                        <p class="subtitle">고객 관리부터 회계 자동화까지, 스마트한 방제 비즈니스의 시작</p>
+                    </section>
+
+                    <div class="info-box">
+                        <p><strong>1. 이 시스템이 무엇인가?</strong><br>
+                        고객 관리, 현장 서비스, 인보이스, 회계(미수금 관리)를 하나로 통합한 전문 ERP입니다. 
+                        현장 기록이 즉시 인보이스로 연결되고, 입금이 누락 없이 반영되는 완벽한 업무 흐름을 제공합니다.</p>
+                    </div>
+
+                    <div class="grid-2">
+                        <!-- flow card -->
+                        <div class="section-card">
+                            <h3>🔥 2. 전체 흐름 (Workflow)</h3>
+                            <div class="flow-container">
+                                <div class="flow-step">스케줄 생성</div>
+                                <div class="flow-arrow">↓</div>
+                                <div class="flow-step">현장 서비스 (Technician)</div>
+                                <div class="flow-arrow">↓</div>
+                                <div class="flow-step">티켓 작성 + 고객 서명</div>
+                                <div class="flow-arrow">↓</div>
+                                <div class="flow-step">Invoice 발행</div>
+                                <div class="flow-arrow">↓</div>
+                                <div class="flow-step">미수금(AR) 자동 반영</div>
+                            </div>
+                        </div>
+
+                        <!-- roles card -->
+                        <div class="section-card">
+                            <h3>👤 3. 사용자 역할</h3>
+                            <div style="margin-bottom: 25px;">
+                                <span class="role-badge badge-owner">🟦 Owner (관리자)</span>
+                                <ul class="feature-list">
+                                    <li>전체 고객(Account) 및 미수금 관리</li>
+                                    <li>인보이스 생성, 발송 및 입금 처리</li>
+                                    <li>기사(Technician) 스케줄 및 정산</li>
+                                </ul>
+                            </div>
+                            <div style="margin-bottom: 5px;">
+                                <span class="role-badge badge-tech">🟩 Technician (현장 기사)</span>
+                                <ul class="feature-list">
+                                    <li>담당 고객 조회 및 스케줄 생성</li>
+                                    <li>현장 서비스 수행 및 디지털 티켓 작성</li>
+                                    <li>현장 사진 업로드 및 고객 서명 수령</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <div class="page-number-custom">Page 1 of 2</div>
+            </div>
+
+            <!-- PAGE 2 -->
+            <div class="page intro-page" id="page-2">
+                <div class="header-stripe"></div>
+                <main style="padding: 0 0.5in;">
+                    <section class="title-section" style="padding: 20px 0 10px 0; margin-bottom: 20px;">
+                        <h2 class="main-title" style="font-size: 20px;">🔧 4. 주요 기능 하이라이트</h2>
+                    </section>
+                    
+                    <div class="grid-2" style="margin-bottom: 20px;">
+                        <div class="section-card">
+                            <p style="font-weight: 700; font-size: 14px; color: var(--secondary-blue); margin-bottom: 8px;">📅 4.1 스케줄 및 현장 티켓</p>
+                            <ul class="feature-list">
+                                <li>현장에서 즉시 작성 및 고객 서명</li>
+                                <li>서명 후 제출 시 수정 불가로 신뢰성 확보</li>
+                                <li>이 티켓은 인보이스의 법적 근거가 됨</li>
+                            </ul>
+                        </div>
+                        <div class="section-card">
+                            <p style="font-weight: 700; font-size: 14px; color: var(--secondary-blue); margin-bottom: 8px;">🧾 4.2 스마트 인보이싱</p>
+                            <ul class="feature-list">
+                                <li>제출된 티켓을 클릭 한 번으로 인보이스 전환</li>
+                                <li>이메일 자동 전송 및 티켓 사본 첨부</li>
+                                <li>입금 시 오래된 인보이스부터 자동 분배 가능</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="grid-2" style="margin-bottom: 20px;">
+                        <div class="section-card">
+                            <p style="font-weight: 700; font-size: 14px; color: var(--secondary-blue); margin-bottom: 8px;">📊 4.3 AR & Statement</p>
+                            <ul class="feature-list">
+                                <li><strong>미수금 관리:</strong> 연체 여부 실시간 계산</li>
+                                <li><strong>Customer Statement:</strong> 전체 내역 요약 전송</li>
+                            </ul>
+                        </div>
+
+                    <div class="section-card" style="border: 2px solid #818cf8; margin-bottom: 20px;">
+                        <h3>🤖 5. AI 지능형 비서 <span class="ai-badge">AI OPTION</span></h3>
+                        <p style="font-size: 13px; color: var(--text-dark); margin-bottom: 10px;">채팅창에 명령을 입력하면 AI가 즉시 실행합니다.</p>
+                        <div style="background: #f8fafc; padding: 10px; border-radius: 6px; font-style: italic; font-size: 13px;">
+                            "Amart 이번달 미수금 얼마야?" | "가장 오래된 인용구 찾아줘"
+                        </div>
+                    </div>
+
+                    <div class="principles-box">
+                        <h4>🔥 6. 중요한 운영 원칙 (Core Rules)</h4>
+                        <ul class="feature-list">
+                            <li><strong>기록 불변의 법칙:</strong> 제출된 티켓, 발행된 인보이스, 등록된 입금은 수정이 불가합니다. 잘못된 경우 <strong>Void(무효화)</strong> 후 새로 생성해야 합니다.</li>
+                            <li><strong>자동 추적 시스템:</strong> 누가, 언제, 어떤 기록을 남겼는지 감사 로그가 남습니다.</li>
+                            <li><strong>자동 계산:</strong> 사용자가 수기로 계산할 필요 없이 모든 수치가 실시간 반영됩니다.</li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-benefits" style="padding: 15px 20px;">
+                        <h3 style="font-size: 16px; margin-bottom: 8px;">✅ 시스템 도입 가치</h3>
+                        <div class="benefit-grid" style="grid-template-columns: 1fr 1fr; margin-top: 10px;">
+                            <div class="benefit-item">✔ 현장-회계 완전 연결</div>
+                            <div class="benefit-item">✔ 미수금 회수 속도 향상</div>
+                            <div class="benefit-item">✔ 수작업 휴먼 에러 제로</div>
+                            <div class="benefit-item">✔ 분쟁 없는 서명 증빙</div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 30px; text-align: center; border-top: 1px solid #eee; padding-top: 15px;">
+                        <p style="font-size: 12px; color: var(--text-muted); margin: 0;">
+                            <strong>MULTIZER</strong> | PH: 201-500-5317 | WEB: MULTIZER.COM
+                        </p>
+                    </div>
+                </main>
+                <div class="page-number-custom">Page 2 of 2</div>
+            </div>
+        </div>
+
+        <div class="action-bar no-print">
+            <button id="download-btn" class="btn btn-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                Save Introduction as PDF
+            </button>
+        </div>
+    </div>
+    <div id="loading" class="download-overlay">Generating Professional Document...</div>
+    <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>

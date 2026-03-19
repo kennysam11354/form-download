@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multizer | Pest Control ERP Architecture Intro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css">
+    <style>
+        :root {
+            --primary-blue: #1e3a8a;
+            --secondary-blue: #3b82f6;
+            --light-blue: #eff6ff;
+            --text-dark: #1f2937;
+            --text-muted: #6b7280;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+            background-color: #f3f4f6;
+        }
+
+        .intro-page {
+            background: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-stripe {
+            height: 8px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue));
+            width: 100%;
+        }
+
+        .title-section {
+            padding: 40px 0 20px 0;
+            border-bottom: 2px solid var(--light-blue);
+            margin-bottom: 30px;
+        }
+
+        .main-title {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin: 0;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-muted);
+            margin-top: 8px;
+        }
+
+        .section-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            height: auto;
+        }
+
+        .section-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-top: 0;
+            margin-bottom: 12px;
+            border-bottom: 2px solid var(--light-blue);
+            padding-bottom: 8px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 10px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .feature-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-blue);
+            font-weight: bold;
+        }
+
+        .highlight-box {
+            background: var(--light-blue);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-size: 13px;
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .footer-info {
+            margin-top: 40px;
+            text-align: center;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .page-number {
+            position: absolute;
+            bottom: 0.5in;
+            right: 0.5in;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div style="width: var(--letter-width); margin: 0 auto 20px auto; padding: 0 10px;">
+            <a href="index.html" class="tab-btn"
+                style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px; width: auto; padding: 10px 20px;">
+                <span>←</span> Back to Directory
+            </a>
+        </div>
+
+        <div id="arch-intro-version" class="version-container active">
+            <!-- PAGE 1 -->
+            <div class="page intro-page" id="page-1">
+                <div class="header-stripe"></div>
+                <header class="letterhead" style="margin-bottom: 0;">
+                    <div class="brand-info">
+                        <img src="/logo.png" alt="Multizer Logo" class="logo-placeholder"
+                            onerror="this.style.display='none'">
+                        <div class="company-details">
+                            <h1 style="color: var(--primary-blue); margin: 0;">MULTIZER</h1>
+                            <p class="slogan" style="color: var(--secondary-blue); font-weight: 700;">ENTERPRISE ARCHITECTURE</p>
+                        </div>
+                    </div>
+                </header>
+
+                <main style="padding: 0 0.5in;">
+                    <section class="title-section">
+                        <h2 class="main-title">🚀 Pest Control ERP v7 통합 아키텍처 계획서</h2>
+                        <p class="subtitle">현장 중심 방제 기록부터 전문 회계 관리까지 - 비즈니스 효율 극대화 솔루션</p>
+                    </section>
+
+                    <div class="section-card">
+                        <h3>1. 솔루션 핵심 개요</h3>
+                        <p style="font-size: 14px; line-height: 1.6; color: var(--text-dark);">
+                            Pest Control ERP v7은 해충 방제 전문 기업의 복잡한 현장 업무와 회계 프로세스를 디지털화하고, 
+                            데이터의 '불변성(Immutability)' 원칙을 고수하여 완벽한 신뢰를 보장하는 차세대 플랫폼입니다.
+                        </p>
+                        <div class="highlight-box">
+                            <strong>핵심 가치:</strong> 데이터 무결성 보장, 수작업 자동화, 법적 증빙 보존, AI 기반 업무 효율화
+                        </div>
+                    </div>
+
+                    <div class="grid-2">
+                        <div class="section-card">
+                            <h3>🛠️ 스마트 현장 관리</h3>
+                            <ul class="feature-list">
+                                <li><strong>디지털 작업 티켓:</strong> 기사가 현장에서 즉시 작업 내용 기록</li>
+                                <li><strong>법적 증빙 보존:</strong> 현장 사진 촬영 및 고객 전자 서명 즉시 수령</li>
+                                <li><strong>EPA 규정 준수:</strong> 약품 사용량, 방법 등을 기록하는 Chemical Log 지원</li>
+                            </ul>
+                        </div>
+                        <div class="section-card">
+                            <h3>💰 전문 회계 엔진</h3>
+                            <ul class="feature-list">
+                                <li><strong>이벤트 기반 원장:</strong> 수정 대신 취소 기록(Void) 방식을 통한 데이터 무결성</li>
+                                <li><strong>자동 인보이싱:</strong> 티켓 묶음 처리를 통한 신속한 청구서 발행</li>
+                                <li><strong>미수금 실시간 분석:</strong> 고객별 연체 통합 관리 시스템</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="section-card">
+                        <h3>🤖 AI 인터페이스 및 운영 원칙</h3>
+                        <ul class="feature-list">
+                            <li><strong>자연어 명령:</strong> 일상 언어로 데이터를 조회하고 제어하는 LLM 계층</li>
+                            <li><strong>불변 기록 정책:</strong> 제출된 데이터는 수정이 불가하며 회계적 투명성 유지</li>
+                        </ul>
+                    </div>
+                </main>
+                <div class="page-number">Page 1 of 1</div>
+            </div>
+        </div>
+
+        <div class="action-bar no-print">
+            <button id="download-btn" class="btn btn-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                Save Architecture Intro as PDF
+            </button>
+        </div>
+    </div>
+    <div id="loading" class="download-overlay">Generating Professional Document...</div>
+    <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
