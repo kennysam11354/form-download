@@ -130,6 +130,19 @@
             font-size: 12px;
             color: var(--text-muted);
         }
+
+        @media print {
+            .page {
+                height: auto !important;
+                min-height: 10in !important;
+                overflow: visible !important;
+                page-break-after: always;
+                box-shadow: none !important;
+                margin: 0 !important;
+            }
+            body { background: white !important; padding: 0 !important; }
+            .no-print { display: none !important; }
+        }
     </style>
 </head>
 
@@ -226,6 +239,13 @@
                             <li data-step="1"><strong>필터링:</strong> 대시보드 상태를 서브 컨트랙터 그룹군별, 연체별, 매출액 순으로 필터링</li>
                             <li data-step="2"><strong>Auto Statement:</strong> 발행된 티켓을 취합하여 스테이트먼트 자동 산출</li>
                             <li data-step="3"><strong>자동 발송:</strong> 설정된 특정 일자에 그룹별로 구분하여 고객에게 자동 이메일 발송</li>
+                        </ul>
+                    <div class="section-card">
+                        <h3>6. 서브 컨트랙터 정산 (Settlement)</h3>
+                        <ul class="step-list">
+                            <li data-step="1"><strong>주기 설정:</strong> 오너 권한으로 각 서브 컨트랙터별 정산 주기(주별/월별)를 설정합니다.</li>
+                            <li data-step="2"><strong>요율 입력:</strong> 계약 조건에 따른 매출액 대비 %를 입력합니다. **(이 작업은 관리자 권한을 가진 오너만 수행할 수 있습니다.)**</li>
+                            <li data-step="3"><strong>지출 항목 관리:</strong> 테크니션의 비즈니스 형태(LLC, Inc. 등)에 맞춰 자동으로 구성된 Account 지출 목록을 확인하고 최종 정산서를 확정합니다.</li>
                         </ul>
                     </div>
                 </main>

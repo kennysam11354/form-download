@@ -28,7 +28,7 @@
             background: white;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             position: relative;
-            overflow: hidden;
+            overflow: visible;
         }
 
         .header-stripe {
@@ -127,6 +127,19 @@
             font-size: 12px;
             color: var(--text-muted);
         }
+
+        @media print {
+            .page {
+                height: auto !important;
+                min-height: 10in !important;
+                overflow: visible !important;
+                page-break-after: always;
+                box-shadow: none !important;
+                margin: 0 !important;
+            }
+            body { background: white !important; padding: 0 !important; }
+            .no-print { display: none !important; }
+        }
     </style>
 </head>
 
@@ -167,7 +180,7 @@
                             **서브 컨트랙터(Sub-contractor) 중심의 최적화된 아키텍처**를 통해 독립적인 비즈니스 관리 환경을 제공합니다.
                         </p>
                         <div class="highlight-box">
-                            <strong>핵심 가치:</strong> 데이터 무결성 보장, **서브 컨트랙터 소유권 관리**, 수작업 자동화, 법적 증빙 보존, 지능형 모니터링
+                            <strong>핵심 가치:</strong> 데이터 무결성 보장, **서브 컨트랙터 소유권 및 정산(Settlement) 관리**, 수작업 자동화, 법적 증빙 보존, 지능형 모니터링
                         </div>
                     </div>
 
@@ -183,8 +196,8 @@
                         <div class="section-card">
                             <h3>💰 지능형 회계 엔진</h3>
                             <ul class="feature-list">
-                                <li><strong>그룹별 자동 스테이트먼트:</strong> 발행된 티켓을 기반으로 서브 컨트랙터별 정산 자동화</li>
-                                <li><strong>다각도 분석 필터:</strong> 연체 기간별, 매출 규모별, 그룹별 실시간 미수금 분석</li>
+                                <li><strong>정산 엔진 (Settlement Engine):</strong> 오너 전용 권한으로 각 서브 컨트랙터별 커미션 요율(%)을 설정하며, 주별/월별 주기에 따라 총 매출 기반 정산액 자동 산출</li>
+                                <li><strong>유형별 지출 아키텍처:</strong> LLC, Inc. 등 비즈니스 법적 형태에 따라 Account상 지출 항목(Expenditure List)이 동적으로 최적화되는 가변적 데이터 구조</li>
                                 <li><strong>데이터 무결성:</strong> 수정 대신 Void(무효화) 방식을 통한 완벽한 회계 원장 관리</li>
                             </ul>
                         </div>

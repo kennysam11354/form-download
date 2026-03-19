@@ -220,6 +220,19 @@
             color: var(--text-muted);
             font-size: 12px;
         }
+
+        @media print {
+            .page {
+                height: auto !important;
+                min-height: 10in !important;
+                overflow: visible !important;
+                page-break-after: always;
+                box-shadow: none !important;
+                margin: 0 !important;
+            }
+            body { background: white !important; padding: 0 !important; }
+            .no-print { display: none !important; }
+        }
     </style>
 </head>
 
@@ -284,6 +297,7 @@
                                     <li><strong>계좌 배분 및 이동:</strong> 신규 고객 구좌 배정 및 기존 고객의 서브 컨트랙터 간 상호 이동 관리</li>
                                     <li><strong>비즈니스 모니터링:</strong> 서브 컨트랙터 그룹별, 연체별, 매출별 실시간 현황 분석</li>
                                     <li><strong>통합 재무 관리:</strong> 전체 회계 원장 및 정산 프로세스 최종 컨트롤</li>
+                                    <li><strong>정산 시스템 (Settlement):</strong> 서브 컨트랙터별 총 매출액 기반 % 정산 (주별/월별), 계약 조건에 따른 커미션 직접 관리</li>
                                 </ul>
                             </div>
                             <div style="margin-bottom: 5px;">
@@ -297,7 +311,7 @@
                         </div>
                     </div>
                 </main>
-                <div class="page-number-custom">Page 1 of 2</div>
+                <div class="page-number-custom">Page 1 of 3</div>
             </div>
 
             <!-- PAGE 2 -->
@@ -335,16 +349,32 @@
                                 <li><strong>Auto Statement:</strong> 티켓 기반으로 자동 생성된 스테이트먼트를 서브 컨트랙터 그룹별로 분리하여 관리하거나 특정 일자에 자동 발송이 가능합니다.</li>
                             </ul>
                         </div>
-
-                    <div class="section-card" style="border: 2px solid #818cf8; margin-bottom: 20px;">
-                        <h3>🤖 5. AI 지능형 비서 <span class="ai-badge">AI OPTION</span></h3>
-                        <p style="font-size: 13px; color: var(--text-dark); margin-bottom: 10px;">채팅창에 명령을 입력하면 AI가 즉시 실행합니다.</p>
-                        <div style="background: #f8fafc; padding: 10px; border-radius: 6px; font-style: italic; font-size: 13px;">
-                            "Amart 이번달 미수금 얼마야?" | "가장 오래된 인용구 찾아줘"
+                        <div class="section-card" style="border: 2px solid #818cf8;">
+                            <h3>🤖 5. AI 지능형 비서 <span class="ai-badge">AI OPTION</span></h3>
+                            <p style="font-size: 13px; color: var(--text-dark); margin-bottom: 10px;">채팅창에 명령을 입력하면 AI가 즉시 실행합니다.</p>
+                            <div style="background: #f8fafc; padding: 10px; border-radius: 6px; font-style: italic; font-size: 13px;">
+                                "Amart 이번달 미수금 얼마야?" | "가장 오래된 AR찾아줘"
+                            </div>
                         </div>
                     </div>
 
-                    <div class="principles-box">
+                    <div class="section-card" style="margin-bottom: 20px;">
+                        <p style="font-weight: 700; font-size: 14px; color: var(--secondary-blue); margin-bottom: 8px;">💰 5.2 맞춤형 정산 및 지출 관리</p>
+                        <ul class="feature-list">
+                            <li><strong>유연한 정산 주기:</strong> 오너는 각 서브 컨트랙터에게 주별 또는 월별로 정산을 진행할 수 있습니다.</li>
+                            <li><strong>매출 기반 커미션:</strong> 담당 구좌(Account) 총 매출의 일정 %를 정산금으로 자동 계산하며, **이 요율은 오너(Owner)만 계약 조건에 따라 직접 입력/수정할 수 있습니다.**</li>
+                            <li><strong>비즈니스 형태별 지출 자동화:</strong> LLC, Inc. 등 각 테크니션의 비즈니스 형태에 따라 계정상 지출 목록이 시스템적으로 자동 분류되어 관리됩니다.</li>
+                        </ul>
+                    </div>
+                </main>
+                <div class="page-number-custom">Page 2 of 3</div>
+            </div>
+
+            <!-- PAGE 3 -->
+            <div class="page intro-page" id="page-3">
+                <div class="header-stripe"></div>
+                <main style="padding: 0 0.5in;">
+                    <div class="principles-box" style="margin-top: 30px;">
                         <h4>🔥 6. 중요한 운영 원칙 (Core Rules)</h4>
                         <ul class="feature-list">
                             <li><strong>기록 불변의 법칙:</strong> 제출된 티켓, 발행된 인보이스, 등록된 입금은 수정이 불가합니다. 잘못된 경우 <strong>Void(무효화)</strong> 후 새로 생성해야 합니다.</li>
@@ -369,7 +399,7 @@
                         </p>
                     </div>
                 </main>
-                <div class="page-number-custom">Page 2 of 2</div>
+                <div class="page-number-custom">Page 3 of 3</div>
             </div>
         </div>
 

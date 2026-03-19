@@ -310,6 +310,9 @@ h2.form-title {
   }
 
   .page {
+    height: auto !important;
+    min-height: 10in !important;
+    overflow: visible !important;
     box-shadow: none;
     margin: 0;
     page-break-after: always;
